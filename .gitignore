@@ -1,0 +1,16 @@
+__pycache__
+.coverage
+.DS_Store
+.env
+.idea/
+.pytest_cache/
+.venv/
+.vim
+.vscode/
+*.egg-info
+*.log
+*.pyc
+*.sqlite3
+coverage.xml
+dist/
+info.log
