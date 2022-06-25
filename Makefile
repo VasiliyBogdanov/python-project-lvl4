@@ -1,15 +1,7 @@
-install:
-	poetry install
-build:
-	poetry build
-package-install:
-	python -m pip install --user --force-reinstall dist/*.whl
 test:
 	poetry run pytest -vv
 test-coverage:
-	poetry run pytest --cov=page_loader --cov-report xml
-lint:
-	poetry run flake8 page_loader
+	poetry run pytest --cov=task_manager --cov-report xml
 run-server:
 	poetry run python3 manage.py runserver
 make-migrations:
@@ -18,4 +10,8 @@ migrate:
 	poetry run python3 manage.py migrate
 generate-requirements:
 	poetry export -f requirements.txt -o requirements.txt
+make-messages:
+	poetry run python3 manage.py makemessages --ignore="static" --ignore=".venv" -l ru
+compile-messages:
+	poetry run python3 manage.py compilemessages
 .PHONY: install build package-install test test-coverage lint run-server make-migrations migrate
