@@ -1,7 +1,3 @@
-test:
-	poetry run pytest -vv
-test-coverage:
-	poetry run pytest --cov=task_manager --cov-report xml
 run-server:
 	poetry run python3 manage.py runserver
 make-migrations:
@@ -14,4 +10,7 @@ make-messages:
 	poetry run python3 manage.py makemessages --ignore="static" --ignore=".venv" -l ru
 compile-messages:
 	poetry run python3 manage.py compilemessages
-.PHONY: install build package-install test test-coverage lint run-server make-migrations migrate
+test:
+# Add app name you wish to test
+	poetry run python3 manage.py test 
+.PHONY: run-server make-migrations migrate generate-requirements make-messages compile-messages test

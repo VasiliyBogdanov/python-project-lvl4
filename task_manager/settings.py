@@ -42,6 +42,7 @@ ALLOWED_HOSTS = [
 INSTALLED_APPS = [
     # my apps
     'task_manager',
+    'users',
     # django apps
     'django.contrib.admin',
     'django.contrib.auth',
@@ -72,7 +73,9 @@ ROOT_URLCONF = 'task_manager.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [
+            BASE_DIR / "templates"
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -119,6 +122,7 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+AUTH_USER_MODEL = "users.User"
 
 # Internationalization
 # https://docs.djangoproject.com/en/3.2/topics/i18n/
@@ -133,7 +137,7 @@ USE_L10N = False
 
 USE_TZ = True
 
-LOCALE_PATHS = (BASE_DIR / 'task_manager/locale',)
+LOCALE_PATHS = (BASE_DIR / 'locale',)
 
 
 # Static files (CSS, JavaScript, Images)

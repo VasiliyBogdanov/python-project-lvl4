@@ -14,3 +14,4 @@ __pycache__
 coverage.xml
 dist/
 info.log
+db.json

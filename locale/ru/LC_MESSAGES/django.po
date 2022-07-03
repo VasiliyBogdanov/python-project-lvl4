@@ -1,0 +1,129 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-07-03 13:06+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n"
+"%100>=11 && n%100<=14)? 2 : 3);\n"
+
+#: task_manager/views.py:15
+msgid "You are logged in"
+msgstr "Вы залогинены"
+
+#: task_manager/views.py:21
+msgid "Login"
+msgstr "Вход"
+
+#: task_manager/views.py:29
+msgid "You are logged out"
+msgstr "Вы разлогинены"
+
+#: templates/base.html:14
+msgid "Task manager"
+msgstr "Менеджер задач"
+
+#: templates/base.html:18
+msgid "Task Manager"
+msgstr "Менеджер задач"
+
+#: templates/base.html:25 users/translations.py:14
+msgid "Users"
+msgstr "Пользователи"
+
+#: templates/base.html:29
+msgid "Statuses"
+msgstr "Статусы"
+
+#: templates/base.html:32
+msgid "Labels"
+msgstr "Метки"
+
+#: templates/base.html:35
+msgid "Tasks"
+msgstr "Задачи"
+
+#: templates/base.html:42
+msgid "Log out"
+msgstr "Выход"
+
+#: templates/base.html:46
+msgid "Log in"
+msgstr "Вход"
+
+#: templates/base.html:49
+msgid "Sign up"
+msgstr "Зарегистрироваться"
+
+#: templates/delete.html:8
+msgid "Are you sure you want to delete"
+msgstr "Вы уверены, что хотите удалить"
+
+#: users/templates/users/create_user.html:12 users/translations.py:9
+msgid "Register"
+msgstr "Зарегистрировать"
+
+#: users/templates/users/users.html:13
+msgid "User name"
+msgstr "Имя пользователя"
+
+#: users/templates/users/users.html:14
+msgid "Full name"
+msgstr "Полное имя"
+
+#: users/templates/users/users.html:15
+msgid "Created at"
+msgstr "Дата создания"
+
+#: users/templates/users/users.html:27
+msgid "Change"
+msgstr "Изменить"
+
+#: users/templates/users/users.html:29 users/translations.py:5
+msgid "Delete"
+msgstr "Удалить"
+
+#: users/translations.py:3
+msgid "Change user"
+msgstr "Изменить пользователя"
+
+#: users/translations.py:4
+msgid "Create user"
+msgstr "Создать пользователя"
+
+#: users/translations.py:6
+msgid "Delete user"
+msgstr "Удалить пользователя"
+
+#: users/translations.py:8
+msgid "You do not have permission to modify another user."
+msgstr "У Вас нет прав для изменения другого польхователя"
+
+#: users/translations.py:10
+msgid "Update"
+msgstr "Обновить"
+
+#: users/translations.py:11
+msgid "User created successfully"
+msgstr "Пользователь успешно создан"
+
+#: users/translations.py:12
+msgid "User was deleted"
+msgstr "Пользователь был удалён"
+
+#: users/translations.py:13
+msgid "User successfully updated"
+msgstr "Пользователь успешно обновлён"
