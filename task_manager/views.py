@@ -2,8 +2,9 @@ from django.shortcuts import render
 from django.contrib.messages.views import SuccessMessageMixin
 from django.contrib.auth.views import LoginView, LogoutView
 from django.contrib import messages
-from django.utils.translation import gettext_lazy as _
 from django.urls import reverse_lazy
+from task_manager.constants import (FORM_TEMPLATE, TITLE, BUTTON_TEXT)
+from .translations import (LOGIN, LOGGED_IN, LOGGED_OUT)
 
 
 def index(request):
@@ -11,14 +12,14 @@ def index(request):
 
 
 class LoginPage(SuccessMessageMixin, LoginView):
-    template_name = "form.html"
-    success_message = _('You are logged in')
+    template_name = FORM_TEMPLATE
+    success_message = LOGGED_IN
     next_page = reverse_lazy('index')
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['button_text'] = 'Log in'
-        context['title'] = _("Login")
+        context[BUTTON_TEXT] = 'Log in'
+        context[TITLE] = LOGIN
         return context
 
 
@@ -26,5 +27,5 @@ class LogoutPage(LogoutView):
     next_page = reverse_lazy('index')
 
     def dispatch(self, request, *args, **kwargs):
-        messages.info(request, _('You are logged out'))
+        messages.info(request, LOGGED_OUT)
         return super().dispatch(request, *args, **kwargs)

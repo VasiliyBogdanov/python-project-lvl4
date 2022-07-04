@@ -23,6 +23,6 @@ urlpatterns = [
     path('login/', views.LoginPage.as_view(), name='login'),
     path('logout/', views.LogoutPage.as_view(), name='logout'),
     path('users/', include("users.urls")),
-    # path('users/', include('django.contrib.auth.urls')),
+    path('statuses/', include("statuses.urls")),
     path('admin/', admin.site.urls),
 ]

@@ -1,6 +1,6 @@
 from django.utils.translation import gettext_lazy as _
 
-CHANGE_USER = _('Change user')
+UPDATE_USER = _('Update user')
 CREATE_USER = _('Create user')
 DELETE = _('Delete')
 DELETE_USER = _('Delete user')

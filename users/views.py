@@ -3,22 +3,20 @@ from django.contrib.messages.views import SuccessMessageMixin
 from django.views.generic import CreateView, DeleteView, ListView, UpdateView
 from .forms import CreateUserForm
 from django.urls import reverse_lazy
-from .custom_mixins import HandleNoPermissionMixin
+from task_manager.custom_mixins import HandleNoPermissionMixin
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.shortcuts import redirect
-from .translations import (CHANGE_USER, CREATE_USER, DELETE, DELETE_USER,
+from .translations import (CREATE_USER, DELETE, DELETE_USER,
                            NO_PERMISSION_TO_MODIFY, REGISTER, UPDATE,
-                           USER_DELETED, USERS, USER_CREATED, USER_UPDATED)
+                           UPDATE_USER, USER_DELETED, USERS, USER_CREATED,
+                           USER_UPDATED)
+from task_manager.constants import (TITLE, BUTTON_TEXT, FORM_TEMPLATE)
 # Create your views here.
-TITLE = 'title'
-BUTTON_TEXT = 'button_text'
 
 USERS_LIST_NAME = 'users:users_list'
 LOGIN_NAME = 'login'
 USERS_CONTEXT_NAME = 'users'
-
 USERS_TEMPLATE_PATH = "users/users.html"
-FORM_TEMPLATE_PATH = 'form.html'
 DELETE_TEMPLATE_PATH = "delete.html"
 
 
@@ -35,7 +33,7 @@ class UserListView(ListView):
 
 class CreateUserView(SuccessMessageMixin, CreateView):
     model = get_user_model()
-    template_name = FORM_TEMPLATE_PATH
+    template_name = FORM_TEMPLATE
     form_class = CreateUserForm
     success_url = reverse_lazy(LOGIN_NAME)
     success_message = USER_CREATED
@@ -54,7 +52,7 @@ class ChangeUser(
         UserPassesTestMixin,
         UpdateView):
     model = get_user_model()
-    template_name = FORM_TEMPLATE_PATH
+    template_name = FORM_TEMPLATE
     form_class = CreateUserForm
     success_message = USER_UPDATED
     success_url = reverse_lazy(USERS_LIST_NAME)
@@ -66,7 +64,7 @@ class ChangeUser(
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context[TITLE] = CHANGE_USER
+        context[TITLE] = UPDATE_USER
         context[BUTTON_TEXT] = UPDATE
         return context
 

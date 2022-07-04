@@ -11,6 +11,5 @@ make-messages:
 compile-messages:
 	poetry run python3 manage.py compilemessages
 test:
-# Add app name you wish to test
 	poetry run python3 manage.py test 
 .PHONY: run-server make-migrations migrate generate-requirements make-messages compile-messages test

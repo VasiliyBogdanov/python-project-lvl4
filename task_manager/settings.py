@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     # my apps
     'task_manager',
     'users',
+    'statuses',
     # django apps
     'django.contrib.admin',
     'django.contrib.auth',
