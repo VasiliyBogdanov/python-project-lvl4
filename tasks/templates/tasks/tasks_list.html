@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% load bootstrap4 %}
+{% block content %}
+<div class="container wrapper flex-grow-1">
+    <div class="card">
+        <div class="card-body p-5 bg-light mt-5 pt-4 pb-16">
+            <h1 class="my-4">{{ title }}</h1>
+            <a class="nav-link" href="{% url 'tasks:create' %}">{% translate "Create task" %}</a>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>{% translate 'Name' %}</th>
+                        <th>{% translate 'Status' %}</th>
+                        <th>{% translate 'Author' %}</th>
+                        <th>{% translate 'Executor' %}</th>
+                        <th>{% translate 'Creation date' %}</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for task in tasks %}
+                    <tr>
+                        <td>{{ task.id }}</td>
+                        <td>
+                            <a href="{% url 'tasks:details' task.id %}">{{ task.name }}</a>
+                        </td>
+                        <td>{{ task.status }}</td>
+                        <td>{{ task.author }}</td>
+                        <td>{{ task.executor }}</td>
+                        <td>{{ task.created_at|date:"d.m.Y H:i" }}</td>
+                        <td>
+                            <a href="{% url 'tasks:update' task.id %}">{% translate "Update" %}</a>
+                            <br>
+                            <a href="{% url 'tasks:delete' task.id %}">{% translate "Delete" %}</a>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+{% endblock %}

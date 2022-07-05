@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-07-03 13:06+0000\n"
+"POT-Creation-Date: 2022-07-05 14:16+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -20,17 +20,143 @@ msgstr ""
 "%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n"
 "%100>=11 && n%100<=14)? 2 : 3);\n"
 
-#: task_manager/views.py:15
-msgid "You are logged in"
-msgstr "Вы залогинены"
+#: statuses/templates/statuses/statuses_list.html:8 statuses/translations.py:4
+msgid "Create status"
+msgstr "Создать статус"
 
-#: task_manager/views.py:21
+#: statuses/templates/statuses/statuses_list.html:13 statuses/translations.py:7
+#: tasks/templates/tasks/tasks_list.html:14 tasks/translations.py:7
+msgid "Name"
+msgstr "Название"
+
+#: statuses/templates/statuses/statuses_list.html:14
+#: tasks/templates/tasks/tasks_details.html:26
+#: tasks/templates/tasks/tasks_list.html:18
+msgid "Creation date"
+msgstr "Дата создания"
+
+#: statuses/translations.py:3 tasks/translations.py:12
+msgid "Create"
+msgstr "Создать"
+
+#: statuses/translations.py:5 tasks/templates/tasks/tasks_details.html:43
+#: tasks/templates/tasks/tasks_list.html:36 tasks/translations.py:19
+#: users/templates/users/users.html:29 users/translations.py:5
+msgid "Delete"
+msgstr "Удалить"
+
+#: statuses/translations.py:6
+msgid "Delete status"
+msgstr "Удалить статус"
+
+#: statuses/translations.py:8 tasks/translations.py:3
+msgid "You are not authorized"
+msgstr "Вы не аторизованы"
+
+#: statuses/translations.py:9
+msgid "Status created successfully"
+msgstr "Статус успешно создан"
+
+#: statuses/translations.py:10
+msgid "Status deleted successfully"
+msgstr "Статус успешно удален"
+
+#: statuses/translations.py:11
+msgid "Status updated successfully"
+msgstr "Статус успешно обновлен"
+
+#: statuses/translations.py:12 templates/base.html:29
+msgid "Statuses"
+msgstr "Статусы"
+
+#: statuses/translations.py:13 tasks/templates/tasks/tasks_list.html:34
+#: tasks/translations.py:15 users/translations.py:10
+msgid "Update"
+msgstr "Обновить"
+
+#: statuses/translations.py:14
+msgid "Update status"
+msgstr "Обновить статус"
+
+#: task_manager/translations.py:3
 msgid "Login"
 msgstr "Вход"
 
-#: task_manager/views.py:29
+#: task_manager/translations.py:4
 msgid "You are logged out"
 msgstr "Вы разлогинены"
+
+#: task_manager/translations.py:5
+msgid "You are logged in"
+msgstr "Вы залогинены"
+
+#: tasks/templates/tasks/tasks_details.html:14
+#: tasks/templates/tasks/tasks_list.html:16
+msgid "Author"
+msgstr "Автор"
+
+#: tasks/templates/tasks/tasks_details.html:18
+#: tasks/templates/tasks/tasks_list.html:17 tasks/translations.py:10
+msgid "Executor"
+msgstr "Исполнитель"
+
+#: tasks/templates/tasks/tasks_details.html:22
+#: tasks/templates/tasks/tasks_list.html:15 tasks/translations.py:9
+msgid "Status"
+msgstr "Статус"
+
+#: tasks/templates/tasks/tasks_details.html:31 templates/base.html:32
+msgid "Labels"
+msgstr "Метки"
+
+#: tasks/templates/tasks/tasks_details.html:41
+#: users/templates/users/users.html:27
+msgid "Change"
+msgstr "Изменить"
+
+#: tasks/templates/tasks/tasks_list.html:9 tasks/translations.py:11
+msgid "Create task"
+msgstr "Создать задачу"
+
+#: tasks/translations.py:4 templates/base.html:35
+msgid "Tasks"
+msgstr "Задачи"
+
+#: tasks/translations.py:5
+msgid "Show"
+msgstr "Показать"
+
+#: tasks/translations.py:6
+msgid "Task created successfully"
+msgstr "Задача успешно создана"
+
+#: tasks/translations.py:8
+msgid "Description"
+msgstr "Описание"
+
+#: tasks/translations.py:13
+msgid "Task updated successfully"
+msgstr "Задача успешно обновлена"
+
+#: tasks/translations.py:14
+msgid "Update task"
+msgstr "Обновить задачу"
+
+#: tasks/translations.py:16
+msgid "Task deleted successfully"
+msgstr "Задача успешно удалена"
+
+#: tasks/translations.py:17
+msgid "Task can only be deleted by it's author"
+msgstr "Задача может быть удалена только автором"
+
+#: tasks/translations.py:18
+msgid "Delete task"
+msgstr "Удалить задачу"
+
+#: tasks/translations.py:20
+msgid "Task view"
+msgstr "Посмотреть задачу"
 
 #: templates/base.html:14
 msgid "Task manager"
@@ -43,18 +169,6 @@ msgstr "Менеджер задач"
 #: templates/base.html:25 users/translations.py:14
 msgid "Users"
 msgstr "Пользователи"
-
-#: templates/base.html:29
-msgid "Statuses"
-msgstr "Статусы"
-
-#: templates/base.html:32
-msgid "Labels"
-msgstr "Метки"
-
-#: templates/base.html:35
-msgid "Tasks"
-msgstr "Задачи"
 
 #: templates/base.html:42
 msgid "Log out"
@@ -88,17 +202,9 @@ msgstr "Полное имя"
 msgid "Created at"
 msgstr "Дата создания"
 
-#: users/templates/users/users.html:27
-msgid "Change"
-msgstr "Изменить"
-
-#: users/templates/users/users.html:29 users/translations.py:5
-msgid "Delete"
-msgstr "Удалить"
-
 #: users/translations.py:3
-msgid "Change user"
-msgstr "Изменить пользователя"
+msgid "Update user"
+msgstr "Создать пользователя"
 
 #: users/translations.py:4
 msgid "Create user"
@@ -110,11 +216,7 @@ msgstr "Удалить пользователя"
 
 #: users/translations.py:8
 msgid "You do not have permission to modify another user."
-msgstr "У Вас нет прав для изменения другого польхователя"
-
-#: users/translations.py:10
-msgid "Update"
-msgstr "Обновить"
+msgstr "У Вас нет прав для изменения другого пользователя"
 
 #: users/translations.py:11
 msgid "User created successfully"
@@ -127,3 +229,8 @@ msgstr "Пользователь был удалён"
 #: users/translations.py:13
 msgid "User successfully updated"
 msgstr "Пользователь успешно обновлён"
+
+#: users/translations.py:15
+msgid "Cannot delete user, because it is in use"
+msgstr "Нельзя удалить пользователя, пока он используется"
+

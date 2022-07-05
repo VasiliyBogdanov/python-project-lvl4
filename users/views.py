@@ -8,10 +8,11 @@ from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.shortcuts import redirect
 from .translations import (CREATE_USER, DELETE, DELETE_USER,
                            NO_PERMISSION_TO_MODIFY, REGISTER, UPDATE,
-                           UPDATE_USER, USER_DELETED, USERS, USER_CREATED,
-                           USER_UPDATED)
+                           USER_IN_USE, UPDATE_USER, USER_DELETED, USERS,
+                           USER_CREATED, USER_UPDATED)
 from task_manager.constants import (TITLE, BUTTON_TEXT, FORM_TEMPLATE)
-# Create your views here.
+from django.contrib import messages
+
 
 USERS_LIST_NAME = 'users:users_list'
 LOGIN_NAME = 'login'
@@ -93,5 +94,8 @@ class DeleteUser(
         return context
 
     def form_valid(self, form):
-        super(DeleteUser, self).form_valid(form)
+        if self.get_object().tasks.all() or self.get_object().objectives.all():
+            messages.error(self.request, USER_IN_USE)
+        else:
+            super(DeleteUser, self).form_valid(form)
         return redirect(USERS_LIST_NAME)
