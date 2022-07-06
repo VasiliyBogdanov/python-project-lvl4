@@ -2,6 +2,7 @@ from django.test import TestCase
 from .models import Task
 from users.models import User
 from statuses.models import Status
+from labels.models import Label
 from django.urls import reverse
 from .translations import (TASK_CREATED, TASK_UPDATED, TASK_DELETED, BY_AUTHOR)
 
@@ -10,15 +11,19 @@ DESCRIPTION = 'description'
 STATUS = 'status'
 AUTHOR = 'author'
 EXECUTOR = 'executor'
+LABELS = 'labels'
 TASKS_LIST = 'tasks:tasks_list'
 STATUS_200 = 200
 TASKS_PATH = '/tasks/'
 
 
 class TestTasks(TestCase):
-    fixtures = ["tasks.json", "statuses.json", "users.json"]
+    fixtures = ["tasks.json", "statuses.json", "users.json", "labels.json"]
 
     def setUp(self):
+        self.label1 = Label.objects.get(pk=1)
+        self.label2 = Label.objects.get(pk=2)
+
         self.task1 = Task.objects.get(pk=1)
         self.task2 = Task.objects.get(pk=2)
 
@@ -32,7 +37,8 @@ class TestTasks(TestCase):
             DESCRIPTION: "description3",
             STATUS: 1,
             AUTHOR: 1,
-            EXECUTOR: 2
+            EXECUTOR: 2,
+            LABELS: [1, 2]
         }
 
     def test_tasks_list(self):
@@ -65,8 +71,10 @@ class TestTasks(TestCase):
             STATUS: 1,
             AUTHOR: 1,
             EXECUTOR: 2,
+            LABELS: [1, 2]
         }
         response = self.client.post(url, changed_task, follow=True)
+
         self.assertRedirects(response, TASKS_PATH)
         self.assertContains(response, TASK_UPDATED)
         self.assertEqual(Task.objects.get(pk=self.task1.pk), self.task1)
@@ -85,6 +93,7 @@ class TestTasks(TestCase):
         self.client.force_login(self.user1)
         url = reverse('tasks:delete', args=(self.task2.pk,))
         response = self.client.post(url, follow=True)
+
         self.assertTrue(Task.objects.filter(pk=self.task2.pk).exists())
         self.assertRedirects(response, TASKS_PATH)
         self.assertContains(response, BY_AUTHOR)

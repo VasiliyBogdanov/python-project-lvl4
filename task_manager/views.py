@@ -6,6 +6,8 @@ from django.urls import reverse_lazy
 from task_manager.constants import (FORM_TEMPLATE, TITLE, BUTTON_TEXT)
 from .translations import (LOGIN, LOGGED_IN, LOGGED_OUT)
 
+INDEX = 'index'
+
 
 def index(request):
     return render(request, "index.html")
@@ -14,7 +16,7 @@ def index(request):
 class LoginPage(SuccessMessageMixin, LoginView):
     template_name = FORM_TEMPLATE
     success_message = LOGGED_IN
-    next_page = reverse_lazy('index')
+    next_page = reverse_lazy(INDEX)
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -24,7 +26,7 @@ class LoginPage(SuccessMessageMixin, LoginView):
 
 
 class LogoutPage(LogoutView):
-    next_page = reverse_lazy('index')
+    next_page = reverse_lazy(INDEX)
 
     def dispatch(self, request, *args, **kwargs):
         messages.info(request, LOGGED_OUT)

@@ -2,37 +2,31 @@
 {% load i18n %}
 {% block title %}{{ title }}{% endblock %}
 {% block content %}
-    <div class="container wrapper flex-grow-1">
-        <div class="card">
-            <div class="card-body p-5 bg-light mt-5 pt-4 pb-16">
-                <h1 class="my-4">{{ title }}</h1>
-                <table class="table table-striped">
-                    <thead>
-                        <tr>
-                            <th>ID</th>
-                            <th>{% translate "User name" %}</th>
-                            <th>{% translate "Full name" %}</th>
-                            <th>{% translate "Created at" %}</th>
-                            <th></th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {% for user in users %}
-                        <tr>
-                            <td>{{ user.id }}</td>
-                            <td>{{ user.username }}</td>
-                            <td>{{ user.first_name }} {{ user.last_name }}</td>
-                            <td>{{ user.date_joined }}</td>
-                            <td>
-                                <a href="{% url 'users:update' user.id %}">{% translate "Change" %}</a>
-                                <br>
-                                <a href="{% url 'users:delete' user.id %}">{% translate "Delete" %}</a>
-                            </td>
-                        </tr>
-                        {% endfor %}
-                    </tbody>
-                </table>
-            </div>
-        </div>
-    </div>
+    <h1 class="my-4">{{ title }}</h1>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>{% translate "User name" %}</th>
+                <th>{% translate "Full name" %}</th>
+                <th>{% translate "Created at" %}</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for user in users %}
+            <tr>
+                <td>{{ user.id }}</td>
+                <td>{{ user.username }}</td>
+                <td>{{ user.first_name }} {{ user.last_name }}</td>
+                <td>{{ user.date_joined|date:"d.m.Y H:i" }}</td>
+                <td>
+                    <a href="{% url 'users:update' user.id %}">{% translate "Change" %}</a>
+                    <br>
+                    <a href="{% url 'users:delete' user.id %}">{% translate "Delete" %}</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
 {% endblock %}

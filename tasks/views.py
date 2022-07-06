@@ -101,7 +101,7 @@ class DeleteTaskPage(
 
     def form_valid(self, form):
         if self.request.user == self.get_object().author:
-            super(DeleteTaskPage, self).form_valid(form)
+            super().form_valid(form)
         else:
             messages.error(self.request, BY_AUTHOR)
         return redirect(self.success_url)
@@ -119,12 +119,13 @@ class TaskDetailPage(
     DetailView,
 ):
     model = Task
-    template_name = "tasks/task_details.html"
+    template_name = "tasks/tasks_details.html"
     context_object_name = 'task'
     no_permission_url = LOGIN
     error_message = NOT_AUTHORIZED
 
     def get_context_data(self, **kwargs):
-        context = super(TaskDetailPage, self).get_context_data()
+        context = super().get_context_data()
         context[TITLE] = TASK_VIEW
+        context['labels'] = self.get_object().labels.all()
         return context

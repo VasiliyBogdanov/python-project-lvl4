@@ -1,0 +1,15 @@
+from django.utils.translation import gettext_lazy as _
+
+NAME_TITLE = _('name')
+NOT_AUTHORIZED = _('You are not authorized')
+LABELS_TITLE = _('Labels')
+LABEL_CREATED = _('Label created successfully')
+CREATE_LABEL = _('Create label')
+CREATE_BUTTON = _('Create')
+LABEL_CHANGED = _('Label changed successfully')
+CHANGE_LABEL = _('Change label')
+CHANGE_BUTTON = _('Change')
+LABEL_DELETED = _('Label deleted successfully')
+LABEL_IN_USE = _('Cannot delete label, because it is in use')
+DELETE_LABEL = _('Delete label')
+DELETE_BUTTON = _('Delete')

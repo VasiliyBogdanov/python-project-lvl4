@@ -1,0 +1,20 @@
+[
+    {
+        "model": "labels.label",
+        "pk": 1,
+        "fields": {
+            "name": "label1",
+            "created_at": "2022-07-06T05:23:09.646Z",
+            "modified_at": "2022-07-06T05:23:09.646Z"
+        }
+    },
+    {
+        "model": "labels.label",
+        "pk": 2,
+        "fields": {
+            "name": "label2",
+            "created_at": "2022-07-06T05:23:16.409Z",
+            "modified_at": "2022-07-06T05:23:16.409Z"
+        }
+    }
+]

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-07-05 14:16+0000\n"
+"POT-Creation-Date: 2022-07-06 13:34+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -20,38 +20,91 @@ msgstr ""
 "%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n"
 "%100>=11 && n%100<=14)? 2 : 3);\n"
 
-#: statuses/templates/statuses/statuses_list.html:8 statuses/translations.py:4
-msgid "Create status"
-msgstr "Создать статус"
+#: labels/templates/labels/labels_list.html:5 labels/translations.py:7
+msgid "Create label"
+msgstr "Создать метку"
 
-#: statuses/templates/statuses/statuses_list.html:13 statuses/translations.py:7
-#: tasks/templates/tasks/tasks_list.html:14 tasks/translations.py:7
+#: labels/templates/labels/labels_list.html:10
+#: statuses/templates/statuses/statuses_list.html:10 statuses/translations.py:7
+#: tasks/templates/tasks/tasks_list.html:11 tasks/translations.py:7
 msgid "Name"
 msgstr "Название"
 
-#: statuses/templates/statuses/statuses_list.html:14
+#: labels/templates/labels/labels_list.html:11
+#: statuses/templates/statuses/statuses_list.html:11
 #: tasks/templates/tasks/tasks_details.html:26
-#: tasks/templates/tasks/tasks_list.html:18
+#: tasks/templates/tasks/tasks_list.html:15
 msgid "Creation date"
 msgstr "Дата создания"
 
-#: statuses/translations.py:3 tasks/translations.py:12
+#: labels/templates/labels/labels_list.html:22
+#: statuses/templates/statuses/statuses_list.html:22
+#: statuses/translations.py:13 tasks/templates/tasks/tasks_list.html:31
+#: tasks/translations.py:15 users/translations.py:10
+msgid "Update"
+msgstr "Обновить"
+
+#: labels/templates/labels/labels_list.html:24 labels/translations.py:15
+#: statuses/templates/statuses/statuses_list.html:24 statuses/translations.py:5
+#: tasks/templates/tasks/tasks_details.html:43
+#: tasks/templates/tasks/tasks_list.html:33 tasks/translations.py:19
+#: users/templates/users/users.html:26 users/translations.py:5
+msgid "Delete"
+msgstr "Удалить"
+
+#: labels/translations.py:3
+msgid "name"
+msgstr "Название"
+
+#: labels/translations.py:4 statuses/translations.py:8 tasks/translations.py:3
+msgid "You are not authorized"
+msgstr "Вы не авторизованы"
+
+#: labels/translations.py:5 tasks/templates/tasks/tasks_details.html:31
+#: tasks/translations.py:21 templates/base.html:32
+msgid "Labels"
+msgstr "Метки"
+
+#: labels/translations.py:6
+msgid "Label created successfully"
+msgstr "Метка успешно создана"
+
+#: labels/translations.py:8 statuses/translations.py:3 tasks/translations.py:12
 msgid "Create"
 msgstr "Создать"
 
-#: statuses/translations.py:5 tasks/templates/tasks/tasks_details.html:43
-#: tasks/templates/tasks/tasks_list.html:36 tasks/translations.py:19
-#: users/templates/users/users.html:29 users/translations.py:5
-msgid "Delete"
-msgstr "Удалить"
+#: labels/translations.py:9
+msgid "Label changed successfully"
+msgstr "Метка успешно создана"
+
+#: labels/translations.py:10
+msgid "Change label"
+msgstr "Изменить метку"
+
+#: labels/translations.py:11 tasks/templates/tasks/tasks_details.html:41
+#: users/templates/users/users.html:24
+msgid "Change"
+msgstr "Изменить"
+
+#: labels/translations.py:12
+msgid "Label deleted successfully"
+msgstr "Метка успешно удалена"
+
+#: labels/translations.py:13
+msgid "Cannot delete label, because it is in use"
+msgstr "Нельзя удалить метку, пока она используется"
+
+#: labels/translations.py:14
+msgid "Delete label"
+msgstr "Удалить метку"
+
+#: statuses/templates/statuses/statuses_list.html:5 statuses/translations.py:4
+msgid "Create status"
+msgstr "Создать статус"
 
 #: statuses/translations.py:6
 msgid "Delete status"
 msgstr "Удалить статус"
-
-#: statuses/translations.py:8 tasks/translations.py:3
-msgid "You are not authorized"
-msgstr "Вы не аторизованы"
 
 #: statuses/translations.py:9
 msgid "Status created successfully"
@@ -68,11 +121,6 @@ msgstr "Статус успешно обновлен"
 #: statuses/translations.py:12 templates/base.html:29
 msgid "Statuses"
 msgstr "Статусы"
-
-#: statuses/translations.py:13 tasks/templates/tasks/tasks_list.html:34
-#: tasks/translations.py:15 users/translations.py:10
-msgid "Update"
-msgstr "Обновить"
 
 #: statuses/translations.py:14
 msgid "Update status"
@@ -91,30 +139,21 @@ msgid "You are logged in"
 msgstr "Вы залогинены"
 
 #: tasks/templates/tasks/tasks_details.html:14
-#: tasks/templates/tasks/tasks_list.html:16
+#: tasks/templates/tasks/tasks_list.html:13
 msgid "Author"
 msgstr "Автор"
 
 #: tasks/templates/tasks/tasks_details.html:18
-#: tasks/templates/tasks/tasks_list.html:17 tasks/translations.py:10
+#: tasks/templates/tasks/tasks_list.html:14 tasks/translations.py:10
 msgid "Executor"
 msgstr "Исполнитель"
 
 #: tasks/templates/tasks/tasks_details.html:22
-#: tasks/templates/tasks/tasks_list.html:15 tasks/translations.py:9
+#: tasks/templates/tasks/tasks_list.html:12 tasks/translations.py:9
 msgid "Status"
 msgstr "Статус"
 
-#: tasks/templates/tasks/tasks_details.html:31 templates/base.html:32
-msgid "Labels"
-msgstr "Метки"
-
-#: tasks/templates/tasks/tasks_details.html:41
-#: users/templates/users/users.html:27
-msgid "Change"
-msgstr "Изменить"
-
-#: tasks/templates/tasks/tasks_list.html:9 tasks/translations.py:11
+#: tasks/templates/tasks/tasks_list.html:6 tasks/translations.py:11
 msgid "Create task"
 msgstr "Создать задачу"
 
@@ -186,19 +225,15 @@ msgstr "Зарегистрироваться"
 msgid "Are you sure you want to delete"
 msgstr "Вы уверены, что хотите удалить"
 
-#: users/templates/users/create_user.html:12 users/translations.py:9
-msgid "Register"
-msgstr "Зарегистрировать"
-
-#: users/templates/users/users.html:13
+#: users/templates/users/users.html:10
 msgid "User name"
 msgstr "Имя пользователя"
 
-#: users/templates/users/users.html:14
+#: users/templates/users/users.html:11
 msgid "Full name"
 msgstr "Полное имя"
 
-#: users/templates/users/users.html:15
+#: users/templates/users/users.html:12
 msgid "Created at"
 msgstr "Дата создания"
 
@@ -218,6 +253,10 @@ msgstr "Удалить пользователя"
 msgid "You do not have permission to modify another user."
 msgstr "У Вас нет прав для изменения другого пользователя"
 
+#: users/translations.py:9
+msgid "Register"
+msgstr "Зарегистрировать"
+
 #: users/translations.py:11
 msgid "User created successfully"
 msgstr "Пользователь успешно создан"
@@ -233,4 +272,3 @@ msgstr "Пользователь успешно обновлён"
 #: users/translations.py:15
 msgid "Cannot delete user, because it is in use"
 msgstr "Нельзя удалить пользователя, пока он используется"
-

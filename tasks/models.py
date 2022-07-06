@@ -1,6 +1,7 @@
 from django.db import models
 from users.models import User
 from statuses.models import Status
+from labels.models import Label
 
 TASKS_NAME = 'tasks'
 
@@ -28,6 +29,7 @@ class Task(models.Model):
     )
     created_at = models.DateTimeField(auto_now_add=True)
     modified_at = models.DateTimeField(auto_now=True)
+    labels = models.ManyToManyField(Label, related_name='tasks', blank=True)
 
     def __str__(self):
         return self.name

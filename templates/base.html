@@ -29,7 +29,7 @@
                   <a class="nav-link" href="{% url 'statuses:statuses_list' %}">{% translate 'Statuses' %}</a>
               </li>
               <li class="nav-item">
-                  <a class="nav-link" href="">{% translate 'Labels' %}</a>
+                  <a class="nav-link" href="{% url 'labels:labels_list' %}">{% translate 'Labels' %}</a>
               </li>
               <li class="nav-item">
                   <a class="nav-link" href="{% url 'tasks:tasks_list' %}">{% translate 'Tasks' %}</a>
@@ -53,8 +53,14 @@
         </div>
       </nav>
       <main>
+        <div class="container wrapper flex-grow-1">
+          <div class="card">
+            <div class="card-body p-5 bg-light mt-5 pt-4 pb-16">
     {% block content %}
     {% endblock content %}
+            </div>
+          </div>
+        </div>
       </main>
   </body>
 </html>
