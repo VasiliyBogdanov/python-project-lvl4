@@ -15,6 +15,7 @@ LABELS = 'labels'
 TASKS_LIST = 'tasks:tasks_list'
 STATUS_200 = 200
 TASKS_PATH = '/tasks/'
+TASKS = 'tasks'
 
 
 class TestTasks(TestCase):
@@ -40,11 +41,12 @@ class TestTasks(TestCase):
             EXECUTOR: 2,
             LABELS: [1, 2]
         }
+# CRUD tests
 
     def test_tasks_list(self):
         self.client.force_login(self.user1)
         response = self.client.get(reverse(TASKS_LIST))
-        tasks_list = list(response.context['tasks'])
+        tasks_list = list(response.context[TASKS])
 
         self.assertEqual(response.status_code, STATUS_200)
         self.assertQuerysetEqual(tasks_list, [self.task1, self.task2])
@@ -97,3 +99,41 @@ class TestTasks(TestCase):
         self.assertTrue(Task.objects.filter(pk=self.task2.pk).exists())
         self.assertRedirects(response, TASKS_PATH)
         self.assertContains(response, BY_AUTHOR)
+# Filter tests
+
+    def test_filter_self_tasks(self):
+        self.client.force_login(self.user1)
+        filtered_list = f"{reverse(TASKS_LIST)}?self_task=on"
+        response = self.client.get(filtered_list)
+
+        self.assertEqual(response.status_code, STATUS_200)
+        self.assertQuerysetEqual(list(response.context[TASKS]), [self.task1])
+
+    def test_filter_by_status(self):
+        self.client.force_login(self.user1)
+        filtered_list = f"{reverse(TASKS_LIST)}?status=2"
+        response = self.client.get(filtered_list)
+
+        self.assertEqual(response.status_code, STATUS_200)
+        self.assertQuerysetEqual(list(response.context[TASKS]), [self.task2])
+
+    def test_filter_by_executor(self):
+        self.client.force_login(self.user1)
+        filtered_list = f"{reverse(TASKS_LIST)}?executor=2"
+        response = self.client.get(filtered_list)
+
+        self.assertEqual(response.status_code, STATUS_200)
+        self.assertQuerysetEqual(list(response.context[TASKS]), [self.task1])
+
+    def test_filter_by_label(self):
+        self.client.force_login(self.user1)
+        self.client.post(reverse('tasks:create'), self.task, follow=True)
+        created_task = Task.objects.get(name=self.task[NAME])
+        filtered_list = f"{reverse(TASKS_LIST)}?labels=1"
+        response = self.client.get(filtered_list)
+
+        self.assertEqual(response.status_code, STATUS_200)
+        self.assertQuerysetEqual(
+            list(response.context[TASKS]),
+            [self.task1, created_task],
+        )

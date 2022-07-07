@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-07-06 13:34+0000\n"
+"POT-Creation-Date: 2022-07-07 10:24+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -26,20 +26,20 @@ msgstr "Создать метку"
 
 #: labels/templates/labels/labels_list.html:10
 #: statuses/templates/statuses/statuses_list.html:10 statuses/translations.py:7
-#: tasks/templates/tasks/tasks_list.html:11 tasks/translations.py:7
+#: tasks/templates/tasks/tasks_list.html:21 tasks/translations.py:7
 msgid "Name"
 msgstr "Название"
 
 #: labels/templates/labels/labels_list.html:11
 #: statuses/templates/statuses/statuses_list.html:11
 #: tasks/templates/tasks/tasks_details.html:26
-#: tasks/templates/tasks/tasks_list.html:15
+#: tasks/templates/tasks/tasks_list.html:25
 msgid "Creation date"
 msgstr "Дата создания"
 
 #: labels/templates/labels/labels_list.html:22
 #: statuses/templates/statuses/statuses_list.html:22
-#: statuses/translations.py:13 tasks/templates/tasks/tasks_list.html:31
+#: statuses/translations.py:13 tasks/templates/tasks/tasks_list.html:41
 #: tasks/translations.py:15 users/translations.py:10
 msgid "Update"
 msgstr "Обновить"
@@ -47,7 +47,7 @@ msgstr "Обновить"
 #: labels/templates/labels/labels_list.html:24 labels/translations.py:15
 #: statuses/templates/statuses/statuses_list.html:24 statuses/translations.py:5
 #: tasks/templates/tasks/tasks_details.html:43
-#: tasks/templates/tasks/tasks_list.html:33 tasks/translations.py:19
+#: tasks/templates/tasks/tasks_list.html:43 tasks/translations.py:19
 #: users/templates/users/users.html:26 users/translations.py:5
 msgid "Delete"
 msgstr "Удалить"
@@ -139,21 +139,21 @@ msgid "You are logged in"
 msgstr "Вы залогинены"
 
 #: tasks/templates/tasks/tasks_details.html:14
-#: tasks/templates/tasks/tasks_list.html:13
+#: tasks/templates/tasks/tasks_list.html:23
 msgid "Author"
 msgstr "Автор"
 
 #: tasks/templates/tasks/tasks_details.html:18
-#: tasks/templates/tasks/tasks_list.html:14 tasks/translations.py:10
+#: tasks/templates/tasks/tasks_list.html:24 tasks/translations.py:10
 msgid "Executor"
 msgstr "Исполнитель"
 
 #: tasks/templates/tasks/tasks_details.html:22
-#: tasks/templates/tasks/tasks_list.html:12 tasks/translations.py:9
+#: tasks/templates/tasks/tasks_list.html:22 tasks/translations.py:9
 msgid "Status"
 msgstr "Статус"
 
-#: tasks/templates/tasks/tasks_list.html:6 tasks/translations.py:11
+#: tasks/templates/tasks/tasks_list.html:16 tasks/translations.py:11
 msgid "Create task"
 msgstr "Создать задачу"
 
@@ -196,6 +196,14 @@ msgstr "Удалить задачу"
 #: tasks/translations.py:20
 msgid "Task view"
 msgstr "Посмотреть задачу"
+
+#: tasks/translations.py:22
+msgid "Label"
+msgstr "Метка"
+
+#: tasks/translations.py:23
+msgid "Only my tasks"
+msgstr "Только задачи, где я - автор"
 
 #: templates/base.html:14
 msgid "Task manager"

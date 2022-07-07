@@ -4,6 +4,8 @@ from statuses.models import Status
 from labels.models import Label
 
 TASKS_NAME = 'tasks'
+ID = 'id'
+NAME = 'name'
 
 
 class Task(models.Model):

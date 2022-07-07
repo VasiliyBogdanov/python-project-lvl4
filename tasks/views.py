@@ -3,7 +3,7 @@ from .translations import (
     NOT_AUTHORIZED, TASKS_TITLE, TASKS_BUTTON, TASK_CREATED, CREATE_TASK,
     CREATE_BUTTON, TASK_UPDATED, UPDATE_BUTTON, UPDATE_TASK, TASK_DELETED,
     BY_AUTHOR, DELETE_TASK, DELETE_BUTTON, TASK_VIEW)
-from .forms import TaskForm
+from .forms import TaskForm, TaskFilter
 from users.models import User
 from .models import Task
 from django.shortcuts import redirect
@@ -12,8 +12,9 @@ from task_manager.custom_mixins import HandleNoPermissionMixin
 from django.contrib.messages.views import SuccessMessageMixin
 from django.urls import reverse_lazy
 from django.contrib.auth.mixins import LoginRequiredMixin
-from django.views.generic import (CreateView, DeleteView, ListView, UpdateView,
+from django.views.generic import (CreateView, DeleteView, UpdateView,
                                   DetailView)
+from django_filters.views import FilterView
 
 TASKS = 'tasks'
 LOGIN = 'login'
@@ -23,12 +24,13 @@ TASKS_LIST = 'tasks:tasks_list'
 class TasksListPage(
     LoginRequiredMixin,
     HandleNoPermissionMixin,
-    ListView,
+    FilterView,
 ):
 
     model = Task
     template_name = "tasks/tasks_list.html"
     context_object_name = TASKS
+    filterset_class = TaskFilter
     no_permission_url = LOGIN
     error_message = NOT_AUTHORIZED
 
