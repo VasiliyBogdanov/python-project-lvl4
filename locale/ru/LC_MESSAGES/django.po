@@ -120,7 +120,7 @@ msgstr "Статус успешно удален"
 
 #: statuses/translations.py:11
 msgid "Status updated successfully"
-msgstr "Статус успешно обновлен"
+msgstr "Статус успешно изменён"
 
 #: statuses/translations.py:12 templates/base.html:29
 msgid "Statuses"
