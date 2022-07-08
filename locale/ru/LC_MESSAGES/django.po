@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-07-08 12:33+0000\n"
+"POT-Creation-Date: 2022-07-08 12:56+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -28,7 +28,7 @@ msgstr "Создать метку"
 #: statuses/templates/statuses/statuses_list.html:10 statuses/translations.py:7
 #: tasks/templates/tasks/tasks_list.html:21 tasks/translations.py:7
 msgid "Name"
-msgstr "Название"
+msgstr "Имя"
 
 #: labels/templates/labels/labels_list.html:11
 #: statuses/templates/statuses/statuses_list.html:11
@@ -130,15 +130,15 @@ msgstr "Статусы"
 msgid "Update status"
 msgstr "Изменение статусаа"
 
-#: task_manager/translations.py:3
+#: task_manager/translations.py:3 task_manager/translations.py:4
 msgid "Login"
 msgstr "Войти"
 
-#: task_manager/translations.py:4
+#: task_manager/translations.py:5
 msgid "You are logged out"
 msgstr "Вы разлогинены"
 
-#: task_manager/translations.py:5
+#: task_manager/translations.py:6
 msgid "You are logged in"
 msgstr "Вы залогинены"
 

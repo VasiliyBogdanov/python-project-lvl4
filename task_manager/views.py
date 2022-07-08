@@ -4,7 +4,7 @@ from django.contrib.auth.views import LoginView, LogoutView
 from django.contrib import messages
 from django.urls import reverse_lazy
 from task_manager.constants import (FORM_TEMPLATE, TITLE, BUTTON_TEXT)
-from .translations import (LOGIN, LOGGED_IN, LOGGED_OUT)
+from .translations import (LOGIN, LOGGED_IN, LOGGED_OUT, LOGIN_BUTTON)
 
 INDEX = 'index'
 
@@ -20,7 +20,7 @@ class LoginPage(SuccessMessageMixin, LoginView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context[BUTTON_TEXT] = 'Log in'
+        context[BUTTON_TEXT] = LOGIN_BUTTON
         context[TITLE] = LOGIN
         return context
 
