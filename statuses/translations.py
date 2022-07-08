@@ -2,7 +2,7 @@ from django.utils.translation import gettext_lazy as _
 
 CREATE_BUTTON = _('Create')
 CREATE_STATUS = _('Create status')
-DELETE_BUTTON = _('Delete')
+DELETE_BUTTON = _('Yes, delete')
 DELETE_STATUS = _('Delete status')
 NAME_TITLE = _('Name')
 NOT_AUTHORIZED = _('You are not authorized')
