@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-07-08 12:56+0000\n"
+"POT-Creation-Date: 2022-07-08 13:17+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -130,8 +130,12 @@ msgstr "Статусы"
 msgid "Update status"
 msgstr "Изменение статусаа"
 
-#: task_manager/translations.py:3 task_manager/translations.py:4
+#: task_manager/translations.py:3
 msgid "Login"
+msgstr "Вход"
+
+#: task_manager/translations.py:4
+msgid "Yes, login"
 msgstr "Войти"
 
 #: task_manager/translations.py:5
