@@ -53,7 +53,7 @@ msgstr "Удалить"
 
 #: labels/translations.py:3
 msgid "name"
-msgstr "Название"
+msgstr "Имя"
 
 #: labels/translations.py:4 statuses/translations.py:8 tasks/translations.py:3
 msgid "You are not authorized"
@@ -78,7 +78,7 @@ msgstr "Метка успешно создана"
 
 #: labels/translations.py:10
 msgid "Change label"
-msgstr "Изменить метку"
+msgstr "Изменение метки"
 
 #: labels/translations.py:11 tasks/templates/tasks/tasks_details.html:41
 #: users/templates/users/users.html:24
