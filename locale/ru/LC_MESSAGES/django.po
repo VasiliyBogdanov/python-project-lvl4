@@ -74,7 +74,7 @@ msgstr "Создать"
 
 #: labels/translations.py:9
 msgid "Label changed successfully"
-msgstr "Метка успешно создана"
+msgstr "Метка успешно изменена"
 
 #: labels/translations.py:10
 msgid "Change label"
