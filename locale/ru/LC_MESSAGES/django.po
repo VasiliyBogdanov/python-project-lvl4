@@ -132,7 +132,7 @@ msgstr "Изменение статусаа"
 
 #: task_manager/translations.py:3
 msgid "Login"
-msgstr "Вход"
+msgstr "Войти"
 
 #: task_manager/translations.py:4
 msgid "You are logged out"
