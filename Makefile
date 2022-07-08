@@ -12,4 +12,9 @@ compile-messages:
 	poetry run python3 manage.py compilemessages
 test:
 	poetry run python3 manage.py test 
-.PHONY: run-server make-migrations migrate generate-requirements make-messages compile-messages test
+lint:
+	poetry run flake8 task_manager
+test-coverage: 
+	poetry run coverage run manage.py test
+	poetry run coverage xml
+.PHONY: run-server make-migrations migrate generate-requirements make-messages compile-messages test lint

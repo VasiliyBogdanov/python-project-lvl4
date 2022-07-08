@@ -3,6 +3,9 @@ name = "hexlet-code"
 version = "0.1.0"
 description = ""
 authors = ["VasiliyBogdanov <moproq@icloud.com>"]
+packages = [
+    { include = "task_manager" },
+]
 
 [tool.poetry.dependencies]
 django = "^4"
