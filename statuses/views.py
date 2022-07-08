@@ -1,14 +1,17 @@
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.messages.views import SuccessMessageMixin
 from django.urls import reverse_lazy
+from django.shortcuts import redirect
 from django.views.generic import CreateView, DeleteView, ListView, UpdateView
 from task_manager.custom_mixins import HandleNoPermissionMixin
+from django.contrib import messages
 from .models import Status
 from .forms import StatusForm
 from .translations import (
     CREATE_STATUS, CREATE_BUTTON, NOT_AUTHORIZED,
     STATUSES_TITLE, STATUS_CREATED, UPDATE_STATUS, UPDATE_BUTTON,
-    STATUS_UPDATED, STATUS_DELETED, DELETE_STATUS, DELETE_BUTTON)
+    STATUS_UPDATED, STATUS_DELETED, DELETE_STATUS, DELETE_BUTTON,
+    STATUS_IN_USE)
 from task_manager.constants import (TITLE, BUTTON_TEXT, FORM_TEMPLATE)
 
 LOGIN_PATH_NAME = 'login'
@@ -86,6 +89,13 @@ class DeleteStatusPage(
     success_message = STATUS_DELETED
     no_permission_url = LOGIN_PATH_NAME
     error_message = NOT_AUTHORIZED
+
+    def form_valid(self, form):
+        if self.get_object().tasks.all():
+            messages.error(self.request, STATUS_IN_USE)
+        else:
+            super().form_valid(form)
+        return redirect(self.success_url)
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
