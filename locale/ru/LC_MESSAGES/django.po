@@ -259,7 +259,7 @@ msgstr "Изменение пользователя"
 
 #: users/translations.py:4
 msgid "Create user"
-msgstr "Создание пользователя"
+msgstr "Регистрация"
 
 #: users/translations.py:6
 msgid "Delete user"
@@ -275,7 +275,7 @@ msgstr "Зарегистрировать"
 
 #: users/translations.py:11
 msgid "User created successfully"
-msgstr "Пользователь успешно создан"
+msgstr "Пользователь успешно зарегистрирован"
 
 #: users/translations.py:12
 msgid "User deleted successfully"
