@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-07-08 14:11+0000\n"
+"POT-Creation-Date: 2022-07-08 15:00+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -210,10 +210,14 @@ msgid "Task view"
 msgstr "Посмотреть задачу"
 
 #: tasks/translations.py:22
-msgid "Label"
+msgid "By label"
 msgstr "Метка"
 
 #: tasks/translations.py:23
+msgid "Label"
+msgstr "Метка"
+
+#: tasks/translations.py:24
 msgid "Only my tasks"
 msgstr "Только свои задачи"
 

@@ -8,7 +8,7 @@ from users.models import User
 import django_filters
 from .translations import (
     NAME_LABEL, DESCRIPTION_LABEL, STATUS_LABEL, EXECUTOR_LABEL, LABELS_LABEL,
-    MY_TASKS_ONLY)
+    MY_TASKS_ONLY, FILTER_LABEL)
 
 NAME = 'name'
 DESCRIPTION = 'description'
@@ -48,7 +48,7 @@ class TaskFilter(django_filters.FilterSet):
     )
     all_labels = Label.objects.values_list(ID, NAME, named=True).all()
     labels = django_filters.filters.ChoiceFilter(
-        label=LABELS_LABEL,
+        label=FILTER_LABEL,
         choices=all_labels,
     )
     self_task = django_filters.filters.BooleanFilter(
