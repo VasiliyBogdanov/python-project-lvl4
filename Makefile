@@ -5,7 +5,7 @@ make-migrations:
 migrate:
 	poetry run python3 manage.py migrate
 generate-requirements:
-	poetry export -f requirements.txt -o requirements.txt
+	poetry export --without-hashes -f requirements.txt -o requirements.txt
 make-messages:
 	poetry run python3 manage.py makemessages --ignore="static" --ignore=".venv" -l ru
 compile-messages:
