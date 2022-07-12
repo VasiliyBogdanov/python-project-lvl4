@@ -1,8 +1,8 @@
 from django.test import TestCase
 from .models import Task
-from users.models import User
-from statuses.models import Status
-from labels.models import Label
+from task_manager.users.models import User
+from task_manager.statuses.models import Status
+from task_manager.labels.models import Label
 from django.urls import reverse
 from .translations import (TASK_CREATED, TASK_UPDATED, TASK_DELETED, BY_AUTHOR)
 

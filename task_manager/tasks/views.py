@@ -4,7 +4,7 @@ from .translations import (
     CREATE_BUTTON, TASK_UPDATED, UPDATE_BUTTON, UPDATE_TASK, TASK_DELETED,
     BY_AUTHOR, DELETE_TASK, DELETE_BUTTON, TASK_VIEW)
 from .forms import TaskForm, TaskFilter
-from users.models import User
+from task_manager.users.models import User
 from .models import Task
 from django.shortcuts import redirect
 from django.contrib import messages

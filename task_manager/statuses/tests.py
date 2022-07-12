@@ -1,6 +1,6 @@
 from django.test import TestCase
-from users.models import User
-from statuses.models import Status
+from task_manager.users.models import User
+from task_manager.statuses.models import Status
 from django.urls import reverse
 from .views import STATUSES_LIST
 from .translations import (STATUS_CREATED, STATUS_UPDATED, STATUS_DELETED)

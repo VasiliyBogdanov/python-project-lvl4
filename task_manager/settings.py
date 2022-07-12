@@ -43,10 +43,10 @@ ALLOWED_HOSTS = [
 INSTALLED_APPS = [
     # my apps
     'task_manager',
-    'users',
-    'statuses',
-    'tasks',
-    'labels',
+    'task_manager.users',
+    'task_manager.statuses',
+    'task_manager.tasks',
+    'task_manager.labels',
     # django apps
     'django.contrib.admin',
     'django.contrib.auth',
@@ -161,11 +161,6 @@ LOCALE_PATHS = (BASE_DIR / 'locale',)
 STATIC_URL = '/static/'
 STATIC_ROOT = BASE_DIR / 'staticfiles'
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
-
-# Default primary key field type
-# https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
-
-DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # Media
 

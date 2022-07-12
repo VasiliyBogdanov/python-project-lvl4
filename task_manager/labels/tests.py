@@ -1,9 +1,9 @@
 from django.test import TestCase
 from django.urls import reverse
 from .models import Label
-from statuses.models import Status
-from tasks.models import Task
-from users.models import User
+from task_manager.statuses.models import Status
+from task_manager.tasks.models import Task
+from task_manager.users.models import User
 from .translations import (
     LABEL_CREATED, LABEL_CHANGED, LABEL_IN_USE, LABEL_DELETED)
 

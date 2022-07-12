@@ -1,10 +1,10 @@
 from django import forms
 from django.db.models import Value
 from django.db.models.functions import Concat
-from labels.models import Label
-from statuses.models import Status
+from task_manager.labels.models import Label
+from task_manager.statuses.models import Status
 from .models import Task
-from users.models import User
+from task_manager.users.models import User
 import django_filters
 from .translations import (
     NAME_LABEL, DESCRIPTION_LABEL, STATUS_LABEL, EXECUTOR_LABEL, LABELS_LABEL,
