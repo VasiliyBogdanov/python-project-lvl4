@@ -1,4 +1,5 @@
 from django import forms
+
 from .models import Status
 from .translations import NAME_TITLE
 

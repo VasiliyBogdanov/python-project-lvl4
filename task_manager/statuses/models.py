@@ -1,4 +1,5 @@
 from django.db import models
+
 from .translations import STATUSES_TITLE
 
 

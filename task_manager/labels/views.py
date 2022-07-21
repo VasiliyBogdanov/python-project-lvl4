@@ -1,11 +1,12 @@
+from django.contrib import messages
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.messages.views import SuccessMessageMixin
 from django.shortcuts import redirect
 from django.urls import reverse_lazy
 from django.views.generic import CreateView, DeleteView, ListView, UpdateView
-from django.contrib import messages
-from task_manager.custom_mixins import HandleNoPermissionMixin
+
 from task_manager.constants import BUTTON_TEXT, TITLE, FORM_TEMPLATE
+from task_manager.custom_mixins import HandleNoPermissionMixin
 from .forms import LabelForm
 from .models import Label
 from .translations import (
@@ -28,11 +29,9 @@ class LabelsListPage(
     context_object_name = LABELS
     no_permission_url = LOGIN
     error_message = NOT_AUTHORIZED
-
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        context[TITLE] = LABELS_TITLE
-        return context
+    extra_context = {
+        TITLE: LABELS_TITLE
+    }
 
 
 class CreateLabelPage(
@@ -48,12 +47,10 @@ class CreateLabelPage(
     success_message = LABEL_CREATED
     no_permission_url = LOGIN
     error_message = NOT_AUTHORIZED
-
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        context[TITLE] = CREATE_LABEL
-        context[BUTTON_TEXT] = CREATE_BUTTON
-        return context
+    extra_context = {
+        TITLE: CREATE_LABEL,
+        BUTTON_TEXT: CREATE_BUTTON
+    }
 
 
 class ChangeLabelPage(
@@ -69,12 +66,10 @@ class ChangeLabelPage(
     success_message = LABEL_CHANGED
     no_permission_url = LOGIN
     error_message = NOT_AUTHORIZED
-
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        context[TITLE] = CHANGE_LABEL
-        context[BUTTON_TEXT] = CHANGE_BUTTON
-        return context
+    extra_context = {
+        TITLE: CHANGE_LABEL,
+        BUTTON_TEXT: CHANGE_BUTTON
+    }
 
 
 class DeleteLabelPage(
@@ -89,6 +84,10 @@ class DeleteLabelPage(
     success_message = LABEL_DELETED
     no_permission_url = LOGIN
     error_message = NOT_AUTHORIZED
+    extra_context = {
+        TITLE: DELETE_LABEL,
+        BUTTON_TEXT: DELETE_BUTTON
+    }
 
     def form_valid(self, form):
         if self.get_object().tasks.all():
@@ -96,9 +95,3 @@ class DeleteLabelPage(
         else:
             super(DeleteLabelPage, self).form_valid(form)
         return redirect(self.success_url)
-
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        context[TITLE] = DELETE_LABEL
-        context[BUTTON_TEXT] = DELETE_BUTTON
-        return context

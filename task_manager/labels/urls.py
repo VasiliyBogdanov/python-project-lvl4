@@ -1,10 +1,12 @@
 from django.urls import path
+
 from .views import (
     ChangeLabelPage,
     CreateLabelPage,
     DeleteLabelPage,
     LabelsListPage,
 )
+
 app_name = 'labels'
 urlpatterns = [
     path("", LabelsListPage.as_view(), name='labels_list'),

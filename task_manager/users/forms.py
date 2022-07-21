@@ -1,5 +1,5 @@
-from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import get_user_model
+from django.contrib.auth.forms import UserCreationForm
 
 FIRST_NAME = 'first_name'
 LAST_NAME = 'last_name'

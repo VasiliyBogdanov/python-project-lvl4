@@ -1,8 +1,9 @@
-from django.shortcuts import render
-from django.contrib.messages.views import SuccessMessageMixin
-from django.contrib.auth.views import LoginView, LogoutView
 from django.contrib import messages
+from django.contrib.auth.views import LoginView, LogoutView
+from django.contrib.messages.views import SuccessMessageMixin
+from django.shortcuts import render
 from django.urls import reverse_lazy
+
 from task_manager.constants import (FORM_TEMPLATE, TITLE, BUTTON_TEXT)
 from .translations import (LOGIN, LOGGED_IN, LOGGED_OUT, LOGIN_BUTTON)
 

@@ -1,9 +1,10 @@
 from django.test import TestCase
-from task_manager.users.models import User
-from task_manager.statuses.models import Status
 from django.urls import reverse
-from .views import STATUSES_LIST
+
+from task_manager.statuses.models import Status
+from task_manager.users.models import User
 from .translations import (STATUS_CREATED, STATUS_UPDATED, STATUS_DELETED)
+from .views import STATUSES_LIST
 
 STATUS_200 = 200
 STATUSES = 'statuses'

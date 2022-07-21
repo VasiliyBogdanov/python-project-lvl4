@@ -1,9 +1,10 @@
 from django.test import TestCase
-from .models import User
 from django.urls import reverse
-from .views import (USERS_CONTEXT_NAME, USERS_LIST_NAME,)
-from .translations import (USER_UPDATED, USER_CREATED, USER_DELETED)
-from .forms import (USERNAME, FIRST_NAME, LAST_NAME, PASSWORD1, PASSWORD2)
+
+from .forms import (USERNAME, FIRST_NAME, LAST_NAME, PASSWORD1, PASSWORD2, )
+from .models import User
+from .translations import (USER_UPDATED, USER_CREATED, USER_DELETED, )
+from .views import (USERS_CONTEXT_NAME, USERS_LIST_NAME, )
 
 USERS_FIXTURE = 'users.json'
 STATUS_200 = 200
